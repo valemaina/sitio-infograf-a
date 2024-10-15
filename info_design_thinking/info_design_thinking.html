@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Condiment&family=Courgette&family=Jersey+20&family=Jersey+25&display=swap" rel="stylesheet">
+	<style type="text/css">
+		html, body{
+			height: 100%;
+			background-color: darkviolet;
+		}
+		*{
+			margin: 0px;
+		}
+		#contenedor{
+			width: 80%;
+			background-color: black;
+			position: relative;			
+			margin: auto;
+			border-radius: 10px;
+		}
+
+		#area1, #area2, #area3, #area4, #area5{
+			width: 6%;
+			height: 10%;
+			position: absolute;
+			background-color: lightblue;
+			opacity: 0.8;
+			border-radius: 60px;
+			cursor: pointer;
+		}
+
+		#area1{
+			top: 10%;
+		    left: 35%;
+		}
+ 
+		#area2{
+			top: 27.5%;
+		    left: 38.5%;
+		}
+		#area3{
+			top: 45%;
+		    left: 40%;
+		}
+		#area4{
+			top: 61.7%;
+		    left: 38.6%;
+		}
+		#area5{
+			top: 79.2%;
+		    left: 35%;
+		}
+		#contenido1{
+			width: 50%;
+			position: absolute;
+			top: 3.7%;
+		    left: 41%;			
+			display:none;
+			border-radius: 10px;
+		}
+		#contenido1 img{
+			width: 100%;
+		}
+
+		#contenido2{
+			width: 50%;
+			position: absolute;
+			top: 23.4%;
+		    left: 44.6%;
+			display:none;
+			border-radius: 10px;
+		}
+		#contenido2 img{
+			width: 100%;
+		}
+		#contenido3{
+			width: 50%;
+			position: absolute;
+			top: 40.8%;
+		    left: 46.1%;
+			display:none;
+			border-radius: 10px;
+
+		}
+		#contenido3 img{
+			width: 100%;
+		}
+
+		#contenido4{
+			width: 50%;
+			position: absolute;
+			top: 57.9%;
+		    left: 44.6%;
+			display:none;
+			border-radius: 10px;
+
+		}
+		#contenido4 img{
+			width: 100%;
+		}
+		#contenido5{
+			width: 50%;
+			position: absolute;
+			top: 75.4%;
+		    left: 41%;
+			display:none;
+			border-radius: 10px;
+
+		}
+		#contenido5 img{
+			width: 100%;
+		}
+		#prende{
+			width: 3%;
+			height: 10px;
+			font-family: courier;
+			font-size: 8px;
+			font-weight: 400;
+			color: white;
+			text-align: center;
+			padding: 2px;
+			position: absolute;
+			top: 3%;
+		    right: 3%;
+			background-color: red;
+			opacity: 0.8;
+			border-radius: 2px;
+			cursor: pointer;
+		}
+
+		#apaga{
+			width: 3%;
+			height: 10px;
+			font-family: courier;
+			font-size: 8px;
+			font-weight: 400;
+			color: white;
+			text-align: center;
+			padding: 2px;
+			position: absolute;
+			top: 3%;
+		    right: 10%;
+			background-color: green;
+			opacity: 0.8;
+			border-radius: 2px;
+			cursor: pointer;
+		}
+
+		h1{
+			font-size: 20px;
+			font-family: "Jersey 25", sans-serif;
+  			font-weight: 400;
+  			font-style: normal;
+  			padding: 10px;
+		}
+		p{
+			font-size: 14px;
+			font-family: "Courier";
+  			font-weight: 400;
+  			font-style: normal;
+  			padding: 0px 10px 10px 10px;
+		}
+		.centrar {
+		  text-align: center;
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		  color: white;
+		}
+
+		/*----------------------TOOLTIPS----------------*/
+		.tooltip {
+		  position: relative;
+		  display: inline-block;
+		  border-bottom: 1px dotted black;
+		}
+
+		.tooltip .tooltiptext {
+		  visibility: hidden;
+		  background-color: black;
+		  color: #fff;
+		  font-size: 10px;
+		  font-family: verdana;
+		  text-align: center;
+		  border-radius: 4px;
+		  padding: 5px 0;
+
+		  /* Position the tooltip */
+		  position: absolute;
+		  z-index: 1;
+		}
+
+		.tooltip:hover .tooltiptext {
+		  visibility: visible;
+		}
+
+
+		/*--------------------REGLAS DE MEDIOS-------------------*/
+		@media screen and (max-width: 800px) {
+				p{ font-size: 9px; }
+				h1{ font-size: 14px; }
+				#prende, #apaga{ font-size: 6px; }
+				 
+		}
+
+		@media screen and (max-width: 600px) {
+				p{ font-size: 7px; }
+				h1{ font-size: 12px; }
+				#prende, #apaga{ font-size: 4px; }
+				 
+
+		}
+
+	</style>
+</head>
+<body>
+
+	<div id="contenedor">
+		<img width="100%" src="fondo_design_thinking.jpg">
+		
+
+		<div id="area1" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)">
+		</div>
+		
+		<div id="area2" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)">
+		</div>
+
+		<div id="area3" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)">
+		</div>
+		<div id="area4" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)">
+		</div>
+		<div id="area5" onmouseover="mouseOver(this.id)" onmouseout="mouseOut(this.id)">
+		</div>
+	
+
+		<div id="contenido1"> 
+			<img src="etapa1.jpg">
+		</div>
+		<div id="contenido2"> 
+			<img src="etapa2.jpg">
+		</div>
+		<div id="contenido3"> 
+			<img src="etapa3.jpg">
+		</div>
+		<div id="contenido4"> 
+			<img src="etapa4.jpg">
+		</div>
+		<div id="contenido5"> 
+			<img src="etapa5.jpg">
+		</div>
+
+		<div id="prende" class="tooltip" onclick="encendido(this.id)">ON
+		<span class="tooltiptext">Prende</span></div>
+
+
+		<div id="apaga"  class="tooltip" onclick="encendido(this.id)">OFF
+		<span class="tooltiptext">Apaga</span></div>
+	</div>
+	<script>
+		function mouseOver(area) {
+		  if (area=="area1") {
+		  document.getElementById("contenido1").style.display = "block";
+		  }
+		  if (area=="area2") {
+		  document.getElementById("contenido2").style.display = "block";
+		  }
+		  if (area=="area3") {
+		  document.getElementById("contenido3").style.display = "block";
+		  }
+		  if (area=="area4") {
+		  document.getElementById("contenido4").style.display = "block";
+		  }
+		  if (area=="area5") {
+		  document.getElementById("contenido5").style.display = "block";
+		  }
+		}
+
+		function mouseOut(area) {
+		  if (area=="area1") {
+		  document.getElementById("contenido1").style.display = "none";
+		  }
+		  if (area=="area2") {
+		  document.getElementById("contenido2").style.display = "none";
+		  }
+		  if (area=="area3") {
+		  document.getElementById("contenido3").style.display = "none";
+		  }
+		  if (area=="area4") {
+		  document.getElementById("contenido4").style.display = "none";
+		  }
+		  if (area=="area5") {
+		  document.getElementById("contenido5").style.display = "none";
+		  }
+		}
+
+		function encendido(boton){
+			if (boton=="prende"){
+		 		document.getElementById("contenido1").style.display = "block";
+  	 		    document.getElementById("contenido2").style.display = "block";
+  	 		    document.getElementById("contenido3").style.display = "block";
+  	 		    document.getElementById("contenido4").style.display = "block";
+  	 		    document.getElementById("contenido5").style.display = "block";
+  			}
+			if (boton=="apaga") {
+	 			document.getElementById("contenido1").style.display = "none";
+  	 		    document.getElementById("contenido2").style.display = "none";
+  	 		    document.getElementById("contenido3").style.display = "none";
+  	 		    document.getElementById("contenido4").style.display = "none";
+  	 		    document.getElementById("contenido5").style.display = "none";
+			}
+		}
+	</script>
+</body>
+</html>

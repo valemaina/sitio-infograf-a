@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Condiment&family=Courgette&family=Jersey+20&family=Jersey+25&display=swap" rel="stylesheet">
+	<style type="text/css">
+
+		html, body{
+			height: 100%;
+			background-color: orange;
+		}
+		*{
+			margin: 0px;
+			box-sizing: border-box;
+		}
+		#contenedor{
+			width: 70%;
+			position: relative;			
+			margin: auto;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		#contenedor img{
+			width: 100%;
+		}
+	/*----------- DIV ORIGEN--------*/
+		#drag1 {
+		  width: 25%;
+		  padding: 3px;
+		  position: absolute;
+		  top: 5.5%;
+		  left: 4.5%;
+		  opacity: 1;
+		  cursor: pointer;
+		  font-size: 18px;
+		}
+		#drag1 img{
+		  width: 100%;
+		}
+
+		#drag2 {
+		  width: 25%;
+		  padding: 3px;
+		  position: absolute;
+		  top: 9%;
+		  left:6%;
+		  opacity: 1;
+		  cursor: pointer;
+		  font-size: 18px;
+		}
+		#drag2 img{
+		  width: 100%;
+		}
+
+		#drag3 {
+		  width: 25%;
+		  padding: 3px;
+		  position: absolute;
+		  top: 13%;
+		  left: 7%;
+		  opacity: 1;
+		  cursor: pointer;
+		  font-size: 18px;
+		}
+		#drag3 img{
+		  width: 100%;
+		}
+
+		#drag4 {
+		  width: 25%;
+		  padding: 3px;
+		  position: absolute;
+		  top: 17%;
+		  left: 8%;
+		  opacity: 1;
+		  cursor: pointer;
+		  font-size: 18px;
+		}
+		#drag4 img{
+		  width: 100%;
+		}
+
+		#drag5 {
+		  width: 25%;
+		  padding: 3px;
+		  position: absolute;
+		  top: 21%;
+		  left: 9%;
+		  opacity: 1;
+		  cursor: pointer;
+		  font-size: 18px;
+		}
+		#drag5 img{
+		  width: 100%;
+		}
+		/*----------- DIVs DESTINO--------*/
+		#destino1 {
+		  width: 40%;
+		  height: 15%;
+		  border: 3px solid #bbb;
+		  position: absolute;
+		  top: 5.5%;
+		  left: 48%;
+		  background-color: #ddd;
+		  border-radius: 10px;
+		}
+		#destino2 {
+		  width: 40%;
+		  height: 15%;
+		  border: 3px solid #bbb;
+		  position: absolute;
+		  top: 23.4%;
+		  left: 52.6%;
+		  background-color: #ddd;
+		  border-radius: 10px;
+		}
+		#destino3 {
+		  width: 40%;
+		  height: 15%;
+		  border: 3px solid #bbb;
+		  position: absolute;
+		  top: 41.5%;
+		  left: 55%;
+		  background-color: #ddd;
+		  border-radius: 10px;
+		}
+		#destino4 {
+		  width: 40%;
+		  height: 15%;
+		  border: 3px solid #bbb;
+		  position: absolute;
+		  top: 59.5%;
+		  left: 52.6%;
+		  background-color: #ddd;
+		  border-radius: 10px;
+		}
+		#destino5 {
+		  width: 40%;
+		  height: 15%;
+		  border: 3px solid #bbb;
+		  position: absolute;
+		  top: 77.5%;
+		  left: 48%;
+		  background-color: #ddd;
+		  border-radius: 10px;
+		}
+
+		/*----------- DIVs ETAPAS--------*/
+
+		#etapa1{ 
+			width: 50%;
+			position: absolute;
+			top: 3.5%;
+			left: 41%;
+			display: none;
+		}
+		#etapa1 img{ 
+			width: 100%;
+		}
+
+		#etapa2{ 
+			width: 50%;
+			position: absolute;
+			top: 23.4%;
+			left: 44.6%;
+			display: none;
+		}
+		#etapa2 img{ 
+			width: 100%;
+		}
+
+		#etapa3{ 
+			width: 50%;
+			position: absolute;
+			top: 40.8%;
+			left: 46.1%;
+			display: none;
+		}
+		#etapa3 img{ 
+			width: 100%;
+		}
+
+
+		#etapa4{ 
+			width: 50%;
+			position: absolute;
+			top: 57.9%;
+			left: 44.6%;
+			display: none;
+		}
+		#etapa4 img{ 
+			width: 100%;
+		}
+
+		#etapa5{ 
+			width: 50%;
+			position: absolute;
+			top: 76%;
+			left: 41%;
+			display: none;
+		}
+		#etapa5 img{ 
+			width: 100%;
+		}
+		/*------ DIV CON LA LÁMPARA DE FINAL DEL EJERCICIO-----*/
+		#final{ 
+			width: 15%;
+			position: absolute;
+			top: 7%;
+			left: 10%;
+			display: none;
+		}
+		#final img{ 
+			width: 100%;
+		}
+
+		/*----------- AYUDA--------*/
+
+		#tarjeta_ayuda{ 
+			width: 40%;
+			background-color: #E6DF27;
+			border: 1px solid grey;
+		  	border-radius: 3px;
+			position: absolute;
+			top: 16%;
+			left: 51%;
+			padding: 16px;
+			display: none;
+		}
+		#tarjeta_ayuda #cerrar{ 
+			width: 20px;
+			height: 20px;
+			background-color: #E6DF27;
+			position: absolute;
+			top: 0%;
+			right: 0%;
+			cursor: pointer;
+			display: none;
+		}
+
+		#tarjeta_ayuda #cerrar img{ 
+			width: 100%;
+			padding: 3px;
+		}
+		/*-----------------------------*/
+		.tarjeta{
+			line-height: 12px;
+		}
+		
+		h1{
+			font-size: 20px;
+			font-family: "Jersey 25", sans-serif;
+  			font-weight: 400;
+  			font-style: normal;
+  			padding: 10px;
+		}
+		p{
+			font-size: 14px;
+			font-family: "Courier";
+  			font-weight: 400;
+  			font-style: normal;
+  			padding: 0px 10px 10px 10px;
+		}
+		.centrar {
+		  text-align: center;
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		  color: white;
+		}
+
+		#controles{
+			width: 25%;
+			position: absolute;
+		  	top: 65%;
+		  	left: 5%;
+		  	padding: 2px;
+		  	font-family: 'Open Sans', sans-serif;
+		  	font-size: 9px;
+		  	font-weight: bold;
+		  	color: #fff;
+		  	text-align: center;
+		  	background-color: #777;
+		  	border-radius: 8px;
+		  	border: 1px solid #ccc;
+		}
+
+	
+
+	/*-------------------------------------------------*/
+		#reset, #prende, #apaga, #ayuda{
+			width: 100%;
+			font-size: 9px;
+		  	cursor: pointer;
+		}
+
+		#reset img, #prende img, #apaga img, #ayuda img{
+			width: 60%;
+		}
+	
+	/*------ZONA DE MENSAJES--------*/
+		#mensajes{
+			width: 100%;
+			background-color: #fff;
+			color: #000;
+		  	font-family: 'Open Sans', sans-serif;
+		  	padding: 5px 2px;
+		  	font-weight: bold;
+		  	border-radius: 5px;
+		}
+	/*----------------------TOOLTIPS----------------*/
+		.tooltip {
+		  position: relative;
+		  display: inline-block;
+		}
+
+		.tooltip .tooltiptext {
+		  visibility: hidden;
+		  background-color: yellow;
+		  color: #333;
+		  font-size: 9px;
+		  font-family: verdana;
+		  text-align: center;
+		  border-radius: 3px;
+		  padding: 3px;
+
+		  /* Position the tooltip */
+		  position: absolute;
+		  z-index: 1;
+		}
+
+		.tooltip:hover .tooltiptext {
+		  visibility: visible;
+		}
+
+		
+		
+	/*------------REGLAS DE MEDIOS---------------*/
+		@media screen and (max-width: 1100px) {
+				#contenedor{
+					width: 80%;
+				}
+				p{ font-size: 9px; }
+				h1{ font-size: 14px; }
+		}
+
+		@media screen and (max-width: 1000px) {
+				#contenedor{
+					width: 90%;
+				}
+				p{ font-size: 9px; }
+				h1{ font-size: 14px; }
+		}
+		@media screen and (max-width: 600px) {
+				p{ font-size: 7px; }
+				h1{ font-size: 12px; }
+		}
+
+	</style>
+</head>
+<body>
+	<div id="contenedor">
+		<img src="fondo_design_thinking.jpg">
+
+		<div id="final"><img src="idea.png"></div>
+
+		<div id="drag1" class="tarjeta" draggable="true" ondragstart="drag(event,this.id)">
+			<img src="et1.png">
+		</div>
+
+		<div id="destino1" class="tarjeta" ondrop="drop(event,this.id)" ondragover="allowDrop(event)">
+			<p>?</p>
+		</div>
+
+		<div id="etapa1" class="tarjeta"><img src="etapa1.jpg"></div>
+
+		<div id="drag2" class="tarjeta" draggable="true" ondragstart="drag(event,this.id)">
+			<img src="et2.png">
+		</div>
+
+		<div id="destino2" class="tarjeta" ondrop="drop(event,this.id)" ondragover="allowDrop(event)">
+			<p>?</p>
+		</div>
+
+		<div id="etapa2" class="tarjeta"><img src="etapa2.jpg"></div>
+
+		<div id="drag3" class="tarjeta" draggable="true" ondragstart="drag(event,this.id)">
+			<img src="et3.png">
+		</div>
+
+		<div id="destino3" class="tarjeta" ondrop="drop(event,this.id)" ondragover="allowDrop(event)">
+			<p>?</p>
+		</div>
+
+		<div id="etapa3" class="tarjeta"><img src="etapa3.jpg"></div>
+
+		<div id="drag4" class="tarjeta" draggable="true" ondragstart="drag(event,this.id)">
+			<img src="et4.png">
+		</div>
+
+		<div id="destino4" class="tarjeta" ondrop="drop(event,this.id)" ondragover="allowDrop(event)">
+			<p>?</p>
+		</div>
+
+		<div id="etapa4" class="tarjeta"><img src="etapa4.jpg"></div>
+
+		<div id="drag5" class="tarjeta" draggable="true" ondragstart="drag(event,this.id)">
+			<img src="et5.png">
+		</div>
+
+		<div id="destino5" class="tarjeta" ondrop="drop(event,this.id)" ondragover="allowDrop(event)">
+			<p>?</p>
+		</div>
+
+		<div id="etapa5" class="tarjeta"><img src="etapa5.jpg"></div>
+
+		<div id="controles">
+		  <table width="100%">
+			<tr width="100%">
+				<td width="33%"> <div id="reset"  class="tooltip" onclick="resetear()"><img src="undo.png"> 
+	    				<span class="tooltiptext">  Resetear</span>
+	   				 </div>
+				</td>
+				<td width="34%">
+					<div id="prende" class="tooltip" onclick="encendido(this.id)"><img src="ver.png">
+						<span class="tooltiptext">Ver solución</span>
+					</div>
+				</td>
+			
+				<td width="33%">
+					<div id="ayuda"  class="tooltip" onclick="ayuda()"><img src="ayuda.png">
+						<span class="tooltiptext">Ayuda</span>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td width="100%" colspan="3">
+					<div id="mensajes">
+						Arrastre las tarjetas de cada etapa a la posición correcta.
+					</div>
+				</td>
+			</tr>
+		  </table>
+	    </div>
+	    <div id="tarjeta_ayuda" class="tarjeta">
+	    	<div id="cerrar" onclick="cierra_ayuda(this.id)">
+	    	   <img src="icono_cerrar_x.png">
+	    	</div>
+	    	<p>Para desplegar la infografía, arrastre las tarjetas a los destinos correctos.</p>
+	    </div>
+	</div>
+	
+	<script>  
+	//---------COMIENZA el JAVASCRIPT--------------//
+		var w_actual;    // div que se está draggeando.
+		var w_final = 0; // variable global que va sumando 1 por cada tarjeta 
+						 //correcta. Cuando valga 5, despliega la div correspondiente.
+
+		function escribir(w_texto){
+			document.getElementById('mensajes').innerHTML=w_texto;
+		}
+
+		function corregir(){
+			if (w_final == 5) {
+				document.getElementById("final").style.display = "block";
+				escribir("PROCESO COMPLETO.");
+			}
+		}
+
+		function allowDrop(ev) {
+		  ev.preventDefault();
+		}
+
+		function drag(ev, w_id_drag) {
+		  // ev.dataTransfer.setData("text", ev.target.id);
+		  w_actual=w_id_drag;
+		}
+
+		function drop(ev, w_id) {
+		  // ev.preventDefault();
+		  // var data = ev.dataTransfer.getData("text");
+
+		  switch(w_id) {
+					  case "destino1":
+					     if (w_actual=="drag1") {
+					     	document.getElementById("etapa1").style.display = "block";
+						  	document.getElementById("drag1").style.display = "none";
+						    document.getElementById("destino1").style.display = "none";
+
+						  	escribir("CORRECTO. La primera etapa es EMPATIZAR.");
+							w_final=w_final+1;
+						  	corregir();
+						  }
+						  else{
+						  	escribir("Lugar destino INCORRECTO. Acá es el lugar de EMPATIZAR.");
+						  }
+					      break;
+					  case "destino2":
+					    if (w_actual=="drag2") {
+					        document.getElementById("etapa2").style.display = "block";
+						    document.getElementById("drag2").style.display = "none";
+						    document.getElementById("destino2").style.display = "none";
+						    escribir("Correcto. La segunda etapa es DEFINIR.");
+							w_final=w_final+1;
+							corregir();
+
+						  }
+						  else{
+						  	escribir("Lugar destino incorrecto. Acá es el lugar de DEFINIR.");
+						  }
+
+					    break;
+					  case "destino3":
+					    if (w_actual=="drag3") {
+					      document.getElementById("etapa3").style.display = "block";
+						  document.getElementById("drag3").style.display = "none";
+						  document.getElementById("destino3").style.display = "none";
+
+					      escribir("Correcto. La tercera etapa es el IDEAR.");
+							w_final=w_final+1;
+							corregir();
+						  }
+						  else{
+						  	escribir("Lugar destino incorrecto. Acá es el lugar de IDEAR.");
+						  }
+
+					    break;
+					  case "destino4":
+					    if (w_actual=="drag4") {
+					      document.getElementById("etapa4").style.display = "block";
+						  document.getElementById("drag4").style.display = "none";
+						  document.getElementById("destino4").style.display = "none";
+					      escribir("Correcto. La cuarta etapa es PROTOTIPAR.");
+							w_final=w_final+1;
+							corregir();
+						  }
+						else{
+						  	escribir("Lugar destino incorrecto. Acá es el lugar de PROTOTIPAR.");
+						}
+					    break;
+
+				      case "destino5":
+					    if (w_actual=="drag5") {
+					      document.getElementById("etapa5").style.display = "block";
+						  document.getElementById("drag5").style.display = "none";
+						  document.getElementById("destino5").style.display = "none";
+					      escribir("Correcto. La quinta etapa es EVALUAR.");
+						  w_final=w_final+1;
+						  corregir();
+						}
+						else{
+						  	escribir("Lugar destino incorrecto. Acá es el lugar de EVALUAR.");
+						}
+					    break;
+
+ 					  
+
+					  default:
+					    // code block
+					}
+		}
+
+		function resetear(){
+			w_final=0;
+			escribir("Arrastre las tarjetas de cada etapa a la posición correcta.");
+			document.getElementById("tarjeta_ayuda").style.display = "none";
+			document.getElementById("cerrar").style.display = "none";
+			
+			document.getElementById("final").style.display = "none";
+
+			document.getElementById("etapa1").style.display = "none";
+			document.getElementById("drag1").style.display = "block";
+			document.getElementById("destino1").style.display = "block";
+			
+			document.getElementById("etapa2").style.display = "none";
+			document.getElementById("drag2").style.display = "block";
+			document.getElementById("destino2").style.display = "block";
+
+			document.getElementById("etapa3").style.display = "none";
+			document.getElementById("drag3").style.display = "block";
+			document.getElementById("destino3").style.display = "block";
+
+		    document.getElementById("etapa4").style.display = "none";
+			document.getElementById("drag4").style.display = "block";
+			document.getElementById("destino4").style.display = "block";
+
+			document.getElementById("etapa5").style.display = "none";
+			document.getElementById("drag5").style.display = "block";
+			document.getElementById("destino5").style.display = "block";
+		}
+
+		function encendido(boton){
+			if (boton=="prende"){
+		 		document.getElementById("etapa1").style.display = "block";
+  	 		    document.getElementById("etapa2").style.display = "block";
+  	 		    document.getElementById("etapa3").style.display = "block";
+  	 		    document.getElementById("etapa4").style.display = "block";
+  	 		    document.getElementById("etapa5").style.display = "block";
+
+  	 		    document.getElementById("drag1").style.display = "none";
+  	 		    document.getElementById("drag2").style.display = "none";
+  	 		    document.getElementById("drag3").style.display = "none";
+  	 		    document.getElementById("drag4").style.display = "none";
+  	 		    document.getElementById("drag5").style.display = "none";
+
+  	 		    document.getElementById("destino1").style.display = "none";
+  	 		    document.getElementById("destino2").style.display = "none";
+  	 		    document.getElementById("destino3").style.display = "none";
+  	 		    document.getElementById("destino4").style.display = "none";
+  	 		    document.getElementById("destino5").style.display = "none";
+  			}
+			if (boton=="apaga") {
+	 			resetear();
+			}
+		}
+
+		function ayuda(){
+				document.getElementById("tarjeta_ayuda").style.display = "block";
+				document.getElementById("cerrar").style.display = "block";
+		}
+		function cierra_ayuda(){
+				document.getElementById("tarjeta_ayuda").style.display = "none";
+				document.getElementById("cerrar").style.display = "none";
+		}
+
+	//----------TERMINA el JAVASCRIPT-------------//
+	</script>
+</body>
+</html>
