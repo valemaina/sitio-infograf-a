@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="estilos_onepage_nova.css">
+
+
+</head>
+<body>
+
+<!------- SOLUCIÓN DE GALERÍA CON SLIDER ----------->
+
+		<!-- Container for the image gallery -->
+		<div class="container_portafolio">
+ 		<!-- Thumbnail images -->
+	
+			<div class="container">
+	  	<!-- Image text -->
+	   		  <div class="caption-container">
+			    <p id="caption"></p>
+			  </div>
+	  		  <div class="fila">
+			   
+			    <div class="columna">
+			      <img class="demo cursor" src="lights/luz1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Proyecto Lights - Imagen 1">
+			    </div>
+			    
+			    <div class="columna">
+			      <img class="demo cursor" src="lights/luz2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Proyecto Lights - Imagen 2">
+			    </div>
+			    <div class="columna">
+			      <img class="demo cursor" src="lights/luz3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Proyecto Lights - Imagen 3">
+			    </div>
+			     <div class="columna">
+			      <img class="demo cursor" src="lights/luz4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Proyecto Lights - Imagen 4">
+			    </div>
+			    
+			    <div class="columna">
+			      <img class="demo cursor" src="lights/luz5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Proyecto Lights - Imagen 5">
+			    </div>
+			    <div class="columna">
+			      <img class="demo cursor" src="lights/luz6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Proyecto Lights - Imagen 6">
+			    </div>
+			  </div>
+			 
+			  <!-- Full-width images with number text -->
+			  <div class="mySlides">
+			    <div class="numbertext">1 / 6</div>
+			      <img src="lights/luz1.jpg" style="width:100%">
+			  </div>
+
+			  <div class="mySlides">
+			    <div class="numbertext">2 / 6</div>
+			      <img src="lights/luz2.jpg" style="width:100%">
+			  </div>
+
+			  <div class="mySlides">
+			    <div class="numbertext">3 / 6</div>
+			      <img src="lights/luz3.jpg" style="width:100%">
+			  </div>
+
+			  <div class="mySlides">
+			    <div class="numbertext">4 / 6</div>
+			      <img src="lights/luz4.jpg" style="width:100%">
+			  </div>
+
+			  <div class="mySlides">
+			    <div class="numbertext">5 / 6</div>
+			      <img src="lights/luz5.jpg" style="width:100%">
+			  </div>
+
+			  <div class="mySlides">
+			    <div class="numbertext">6 / 6</div>
+			      <img src="lights/luz6.jpg" style="width:100%">
+			  </div>
+
+			  <!-- Next and previous buttons -->
+			  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+			</div>
+		</div>
+		<script type="text/javascript">
+
+			//============= SLIDER ============//
+
+
+			var slideIndex = 1;
+			showSlides(slideIndex);
+
+			function plusSlides(n) {
+			  showSlides(slideIndex += n);
+			}
+
+			function currentSlide(n) {
+			  showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+			  var i;
+			  var slides = document.getElementsByClassName("mySlides");
+			  var dots = document.getElementsByClassName("demo");
+			  var captionText = document.getElementById("caption");
+			  if (n > slides.length) {slideIndex = 1}
+			  if (n < 1) {slideIndex = slides.length}
+			  for (i = 0; i < slides.length; i++) {
+			      slides[i].style.display = "none";
+			  }
+			  for (i = 0; i < dots.length; i++) {
+			      dots[i].className = dots[i].className.replace(" active", "");
+			  }
+			  slides[slideIndex-1].style.display = "block";
+			  dots[slideIndex-1].className += " active";
+			  captionText.innerHTML = dots[slideIndex-1].alt;
+			}
+    	</script>
+</body>
+</html>

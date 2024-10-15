@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="estilos_onepage_nova.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body {font-family: "Lato", sans-serif;}
+
+		.tablink {
+		  background-color: #555;
+		  color: white;
+		  float: left;
+		  border: none;
+		  outline: none;
+		  cursor: pointer;
+		  padding: 14px 16px;
+		  font-size: 12px;
+		  width: 20%;
+		  float: left;
+		}
+
+		.tablink:hover {
+		  background-color: #777;
+		}
+
+		/* Style the tab content */
+		.tabcontent {
+		  width: 100%;
+		  color: white;
+		  display: none;
+		  padding: 50px;
+		  text-align: center;
+		  float: left;
+		}
+		/* Style the tab content */
+		.tabcontent2 {
+		  width: 100%;
+		  color: white;
+		  display: none;
+		  padding: 50px;
+		  text-align: center;
+		  float: left;
+		}
+		
+		#analisis {background-color:red;}
+		#analisis2 {background-color:darkred;}
+		#planificacion {background-color:green;}
+		#planificacion2 {background-color:darkgreen;}
+		#diseno {background-color:blue;}
+		#diseno2 {background-color:darkblue;}
+		#desarrollo {background-color:orange;}
+		#desarrollo2 {background-color:darkorange;}
+		#testing {background-color:purple;}
+		#testing2 {background-color:violet;}
+	</style>
+</head>
+<body>
+<div id="analisis" class="tabcontent">
+  <h2>Análisis de Requerimientos</h2>
+  <p>Documento de especificación de requerimientos.</p>
+</div>
+
+<div id="planificacion" class="tabcontent">
+  <h2>Planificación</h2>
+  <p>Plan de Proyecto. Diagrama de Gantt.</p> 
+</div>
+
+<div id="diseno" class="tabcontent">
+  <h2>Diseño</h2>
+  <p>Mapa de Sitio. Wireframe. Mockup. Prototipo.</p>
+</div>
+
+<div id="desarrollo" class="tabcontent">
+  <h2>Desarrollo</h2>
+  <p>Programación de Frontend y Backend.</p>
+</div>
+<div id="testing" class="tabcontent">
+  <h2>Testing</h2>
+  <p>Plan de Testing y Casos de Prueba.</p>
+</div>
+<button class="tablink" onclick="openCity('analisis', 'analisis2', this, 'red')" id="defaultOpen">ANÁLISIS</button>
+<button class="tablink" onclick="openCity('planificacion', 'planificacion2',this, 'green')">PLANIFICACIÓN</button>
+<button class="tablink" onclick="openCity('diseno', 'diseno2',this, 'blue')">DISEÑO</button>
+<button class="tablink" onclick="openCity('desarrollo', 'desarrollo2', this, 'orange')">DESARROLLO</button>
+<button class="tablink" onclick="openCity('testing', 'testing2',this, 'purple')">TESTING</button>
+
+<div id="analisis2" class="tabcontent2">
+  <h2>Análisis de Requerimientos</h2>
+  <p>Documento de especificación de requerimientos.</p>
+</div>
+
+<div id="planificacion2" class="tabcontent2">
+  <h2>Planificación</h2>
+  <p>Plan de Proyecto. Diagrama de Gantt.</p> 
+</div>
+
+<div id="diseno2" class="tabcontent2">
+  <h2>Diseño</h2>
+  <p>Mapa de Sitio. Wireframe. Mockup. Prototipo.</p>
+</div>
+
+<div id="desarrollo2" class="tabcontent2">
+  <h2>Desarrollo</h2>
+  <p>Programación de Frontend y Backend.</p>
+</div>
+<div id="testing2" class="tabcontent2">
+  <h2>Testing</h2>
+  <p>Plan de Testing y Casos de Prueba.</p>
+</div>
+
+
+
+<script>
+function openCity(cityName,cityName2,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+    tabcontent2 = document.getElementsByClassName("tabcontent2");
+  for (i = 0; i < tabcontent2.length; i++) {
+    tabcontent2[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(cityName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+  document.getElementById(cityName2).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
